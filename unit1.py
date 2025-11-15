@@ -379,4 +379,5 @@
 # #abstract function to return the absolute value
 # print(abs(-2))
 # print(abs(4))
+print("save point-2")
 
