@@ -207,14 +207,6 @@ zip(list1,list2)
 print(zip(list1,list2))
 
 
-
-
-
-
-
-
-
-
 #number formatting
 a=5
 b=3
@@ -378,4 +370,11 @@ print(absolute_input(list2))
 print(abs(-2))
 print(abs(4))
 print("save point-2")
+
+#print factorial
+n=int(input("enter a number:"))
+fact=1
+for i in range(1,n+1):
+    fact*=i
+print(fact)
 
