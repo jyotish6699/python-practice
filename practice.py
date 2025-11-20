@@ -506,4 +506,162 @@
 
 # student1.updategrade("b++")
 
+##reverse a string 
+##method1 using slicing
+# a="jyotish"
+#print(a[::-1])
+##method2 using loop
+# rev=""
+# for i in a:
+#     rev=i+rev
+# print(rev)
 
+##method3 using reversed() function
+# rev2=''.join(reversed(a))
+# print(rev2)
+##method4 using recursion
+# def reverse_string(s):
+#     if len(s)==0:
+#         return s
+#     else:
+#         return s[-1]+reverse_string(s[:-1])
+    
+# print(reverse_string(a))
+
+##print all element of tuple except the last element
+# tup=(1,2,3,4,5,6,7,8,9,10)
+# print(tup[:-1])
+##print all element of tuple except the first element
+# print(tup[1:])
+##print all element of tuple except the first and last element
+# print(tup[1:-1])
+
+#---------------------------------------
+##question on 0ops
+#------------------------------------
+#overloading in oops
+##inheritance,polymorphism,overloading and modularity,abstraction,encapsulation,multiple inheritance,multilevel inheritance,method overriding,
+#---------------------------------------
+#1inheritance means property of parent also child have their property of parent and child have their own property also child can access the property of parent using inheritance or super() method
+
+#2polymorphism means poly(many) morphism(forms) means many forms one name means same method name but different class
+#polymorphism is of two types
+
+#1compile time polymorphism(static polymorphism) means method overloading and operator overloading
+
+#2run time polymorphism(dynamic polymorphism) means method overriding
+
+#difference between polymophism and overriding  polymorphism is of two types compile time polymorphism and run time polymorphism whereas overriding is only run time polymorphism
+
+#3overloading means same method same class but multiple parameters in multiple call
+
+#4modularity means divide the large program into small program called module so that it can be easily debugged and maintained
+
+#5abstraction means hide the implementation details and show only functionality to the user 
+
+#6encapsulation means data inside the capsule layer and data can only be accessed by the method of class when we make data private using __ before the variable name because private data can only be accessed by the method of class(inside the class) and not outside the class and public data can be accessed by the method of class(inside the class) and outside the class also
+
+# class Person:
+#     def __init__(self,owner,money):
+#         self.owner=owner
+#         self.__money=money  #private variable
+#     def deposit(self,amount):
+#         self.__money+=amount
+#         print(f"amount deposited: {amount}")
+#         print(f"new balance: {self.__money}")
+#     def withdraw(self,amount):
+#         if amount>self.__money:
+#             print("insufficient balance")
+#         else:
+#             self.__money-=amount
+#             print(f"amount withdrawn: {amount}")
+#             print(f"new balance: {self.__money}")
+                
+#     def display_balance(self):
+#         print(f"balance of {self.owner}: {self.__money}")
+
+# person1=Person('jyotish',1000)
+# person2=Person('rahul',2000)
+# person1.deposit(500)
+# person2.deposit(1000)
+# person2.withdraw
+# person1.withdraw(200)
+# person1.display_balance()
+# person2.display_balance()
+# print(person1.owner)
+
+#print(person1.__money) #error because __money is private variable and can only be accessed by the method of class(inside the class) and not outside the class
+
+#7multiple inheritance means child have have multiple parent class(same level value of both parent class)
+#8multilevel inheritance means child have parent and grandparent class(different level value of both parent class)
+
+
+#inheritance means property of parent also child have their property of parent and child have their own property also child can access the property of parent using super() method
+#parent class==base class==super class
+#child class==derived class==sub class
+
+#calling constructor of parent class to use parent parent name variable in child class
+
+#name variable is defined in parent class beacause making object of child class we have to pass name variable also so to avoid the error we have to call the constructor of parent class using super() method
+
+#single inheritance using super() method and method overriding
+# class Person:
+#     def __init__(self,name):
+#         self.name=name
+#     def getname(self):
+#         print(self.name)
+
+# class Student(Person):
+#     def __init__(self,name,marks):
+#         super().__init__(name)
+#         self.marks=marks
+#         #overriding getname() method of parent class
+#     def getname(self):
+#         print(self.name,self.marks)
+
+
+# student1=Student("jyotish",90)
+# student1.getname()
+
+#Multiple Inheritance is like having two parents (Mother and Father).
+#Multilevel Inheritance is like having a parent and a grandparent.
+
+#overloaing means same method same class but multiple parameters in multiple call
+
+# class Mathoperation:
+#     def add(self,a=0,b=0,c=0,d=0,e=0):
+#         self.a=a
+#         self.b=b
+#         self.c=c
+#         self.d=d
+#         self.e=e
+#         print(self.a+self.b+self.c+self.d+self.e)
+
+# math=Mathoperation()
+# math.add(2,3)
+# math.add(2,3,4)
+# math.add(2,3,4,5)
+# math.add(2,3,4,5,6)
+
+# #inheritance
+# class Parent:
+#     def parent_property(self,money,land,gold):
+#         self.money=money
+#         self.land=land
+#         self.gold=gold
+
+# class Child(Parent): #parent inherit
+#     def child_property(self,bike,car):
+#         self.bike=bike
+#         self.car=car
+
+# child1=Child()
+# child1.child_property("honda","suzuki")
+# child1.parent_property("1crore","2acre","5kg")
+# print(child1.money)
+# print(child1.bike)
+# print(child1.land)
+# print(child1.car)
+
+
+#
