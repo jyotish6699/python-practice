@@ -663,5 +663,178 @@
 # print(child1.land)
 # print(child1.car)
 
+#-----------------------------------
+#types of inheritance
+#1single inhereitance
+#2multiple inheritance
+#3multilevel inheritance
+#4hybrid inheritance
+#5hierarchical inheritance
+#------------------------------------
 
-#
+
+##accessing list element inside class method
+
+# class List:
+#     def number1(self,mylist1):
+#         self.list=mylist1
+#         for i in self.list:
+#             print(i)
+
+#mylist=list(map(int,input("enter the list element:").split))
+# mylist=[1,2,3,4,5,6,7,8,9,10]
+# obj=List()
+# obj.number1(mylist)
+
+##composition over prototype because python does not support prototype based inheritance
+
+##using delegation(passes) to achieve composition
+##example of composition
+
+
+# class Engine:
+#     def start(self):
+#         print("engine started")
+#     def stop(self):
+#         print("engine stopped")
+# class Car:
+#     def __init__(self):
+#         self.engine=Engine()
+#     def start(self):
+#         self.engine.start()
+#     def stop(self):
+#         self.engine.stop()
+
+# car1=Car()
+# car1.start()
+# car1.stop()
+##you cannot access the engine class method directly using car class object because engine class is not inherited by car class but you can access the engine class method using car class method because car class has an object of engine class
+
+
+
+
+
+
+
+## abstract class and method
+#from abc import ABC,abstractmethod
+
+# class Animal(ABC):
+#     @abstractmethod
+#     def sound(self):
+#         pass
+#     def sleep(self):
+#         print("animal is sleeping")
+
+# class Dog(Animal):
+#     def sound(self):
+#         print("bark")
+#     def sleep(self):
+#         print("dog is sleeping")
+
+# dog1=Dog()
+# dog1.sound()
+
+
+##----------------------------------------
+##File handling operators 
+##write,read,append,read and write,write and read
+##w=>write and remove all previous data
+##r=>read only
+##a=>append data at the end of file
+##r+=>read and write
+##w+=>write and read
+##x=>create a new file
+##a+=>append and read
+##seek()=>move the cursor to the specified position
+##when open the file in write mode then it will remove all previous data and write new data if file is not present then it will create a new file
+##when append mode is used then it will add new data at the end of file if file is not present then it will create a new file
+##with statement is used to open the file and it will automatically close the file after the indented block is executed
+##example of file handling
+
+# fw=open("stu.txt","w") #file write mode
+# fw.write("hello jyotish")
+# fw.close()
+# fr=open("stu.txt","r") #file read mode
+# print(fr.read(4)) #read first 4 character
+# print(fr.seek(0)) #move the cursor to the beginning of the file
+# print(fr.read()) #read the whole file
+# fr.close()
+# fr.read() #error because file is closed
+# print(fr.read(2))
+
+# ##open the file and copy it to the new file
+# fr=open("stu.txt","r")
+# fw=open("stu_copy.txt","w")
+# fw.write(fr.read()) 
+# ##open the file as read and write mode(r+)
+# frw=open("stu.txt","r+")
+# print(frw.read())
+# ##open the file as write and read mode(w+)
+# frw2=open("stu2.txt","w+")
+# frw2.write("hello jyotish")
+# print(frw2.read()) #error because cursor is at the end of the file
+# frw2.seek(0)
+
+
+
+##---------------------------------
+##factorial using recursion
+
+# def factorial(n):
+#     #base case
+#     if n==0:
+#         return 1
+#     #recursive case
+#     return n*factorial(n-1)
+
+
+# print(factorial(5))
+# print("hello")
+
+# ##sum of n natural numbers using recursion
+
+# def sum_natural(n):
+#     if n==0:
+#         return 0
+#     else:
+#         return n+sum_natural(n-1)
+
+# print(sum_natural(5))
+
+# ##fibonacci series using recursion
+# # 0 1 1 2 3 5 8 ...
+# def fibonacci(n):
+#     if n<=1:
+#         return n
+#     else:
+#         return fibonacci(n-1)+fibonacci(n-2)
+
+# print(f"Fibonacci at index 6: {fibonacci(6)}")
+
+# ##sum of digits using recursion
+# # 123 -> 1+2+3 = 6
+# def sum_digits(n):
+#     if n==0:
+#         return 0
+#     else:
+#         return (n%10) + sum_digits(n//10)
+
+# print(f"Sum of digits of 12345: {sum_digits(12345)}")
+
+# ##power of number using recursion
+# # 2^3 = 2*2*2 = 8
+# def power(base,exp):
+#     if exp==0:
+#         return 1
+#     else:
+#         return base * power(base,exp-1)
+
+# print(f"2 to the power 3 is: {power(2,3)}")
+
+
+##nested loop
+for i in range(1,6):
+    for j in range(i):
+        print("*",end="")
+    print()
